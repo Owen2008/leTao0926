@@ -8,9 +8,10 @@
   <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.min.css">
   <link rel="stylesheet" href="css/common.css">
+
 </head>
 <body>
-  <div class="container">
+  <div class="contain">
    <div class="left_aside">
      <div class="title">
         <p>letao后台</p>
@@ -48,12 +49,26 @@
      </div>
    </div>
    <div class="right_aside">
-     <div class="topbar"></div>
-     <div class="contain"></div>
+     <div class="topbar">
+       <a href="Javascript:;" class="pull-left"><i class="glyphicon glyphicon-align-justify"></i></a>
+       <a href="Javascript:;" class="pull-right"><i class="glyphicon glyphicon-log-out"></i></i></a>
+     </div>
+     <div class="container-fluid">
+        <ol class="breadcrumb">
+            <li><a href="#">管理系统</a></li>
+            <li class="active">首页</li>
+          </ol>
+         <div class="dataTable">
+           <div class="canvas-l pull-left" id="canvas-l"></div>
+           <div class="canvas-r pull-right" id="canvas-r"></div>
+         </div> 
+     </div>
    </div>
   </div>
 </body>
 <script src="lib/jquery/jquery.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="lib/echarts/echarts.min.js"></script>
+<script src="js/index.js"></script>
 </html>
