@@ -7,6 +7,8 @@
   <title>Document</title>
   <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.min.css">
+    <!-- 进度条插件 -->
+    <link rel="stylesheet" href="lib/nprogress/nprogress.css">
   <link rel="stylesheet" href="css/common.css">
 
 </head>
@@ -29,8 +31,8 @@
               <span>用户管理</span>
             </a>
           </li>
-          <li>
-              <a href="Javascript:;">
+          <li class="category">
+              <a href="Javascript:;" >
                   <i class="glyphicon glyphicon-list"></i>
                  <span>分类管理</span>
                </a>
@@ -51,7 +53,7 @@
    <div class="right_aside">
      <div class="topbar">
        <a href="Javascript:;" class="pull-left"><i class="glyphicon glyphicon-align-justify"></i></a>
-       <a href="Javascript:;" class="pull-right"><i class="glyphicon glyphicon-log-out"></i></i></a>
+       <a href="Javascript:;" class="pull-right "><i class="glyphicon glyphicon-log-out"></i></i></a>
      </div>
      <div class="container-fluid">
         <ol class="breadcrumb">
@@ -65,10 +67,35 @@
      </div>
    </div>
   </div>
+  <!-- 模态框 -->
+ 
+
+  
+  <!-- Modal -->
+  <div class="modal fade" tabindex="-1" id="myModal">
+      <div class="modal-dialog" >
+        <div class="modal-content modal-sm">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" ><span >&times;</span></button>
+            <h4 class="modal-title">温馨提示</h4>
+          </div>
+          <div class="modal-body">
+            <p class="dangerColor"><i class="glyphicon glyphicon-info-sign"></i>您确定要退出管理系统吗?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary logOut">退出</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 </body>
 <script src="lib/jquery/jquery.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="lib/echarts/echarts.min.js"></script>
+<script src="lib/nprogress/nprogress.js"></script>
+<script src="js/common.js"></script>
 <script src="js/index.js"></script>
+<script src="js/checkLogin.js"></script>
 </html>

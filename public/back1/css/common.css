@@ -15,6 +15,9 @@ a:active{
 body_bg{
 background-color: #222D32;
 }
+.dangerColor{
+  color:#A94442;
+}
 .panel-title{
   height: 40px;
   line-height: 40px;
@@ -29,6 +32,10 @@ background-color: #222D32;
   height: 100%;
   background-color: #222D32;
   z-index: 999;
+  transition:all 1s;
+}
+.left_aside.sideHiden{
+  left:-180px;
 }
 .left_aside .title{
   color: #fff;
@@ -60,6 +67,7 @@ color: #fff;
   padding-left: 17px;
   display: none;
 }
+
 .right_aside .topbar{
   height: 50px;
   position: fixed;
@@ -68,6 +76,12 @@ color: #fff;
   width: 100%;
   background-color: #3C8DBC;
   padding-left: 180px;
+  transition: all 1s;
+  z-index: 666;
+}
+.right_aside .topbar.sideHiden{
+  padding-left: 0;
+  
 }
 .right_aside .topbar a{
   width: 50px;
@@ -81,7 +95,11 @@ color: #fff;
   padding-top: 70px;
   padding-left: 200px;
   /* padding:20px; */
+  transition: all 1s;
 
+}
+.container-fluid.sideHiden{
+  padding-left: 0px;
 }
 .container-fluid .breadcrumb{
   /* margin: 20px; */
