@@ -42,7 +42,6 @@ $(function(){
   });
   $('#form').on("success.form.bv", function( e ) {
     e.preventDefault();
-    console.log("阻止了跳转吗")
     //使用ajax提交逻辑
     $.ajax({
       url:"/employee/employeeLogin",
