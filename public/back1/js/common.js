@@ -34,10 +34,9 @@ $(function(){
 });
 // 二级导航显示
 $(function(){
-  $(".category>a").click(function(){
+  $(".category").click(function(){
     $(".category .updown").stop().slideToggle();
    
   })
   
-
 })

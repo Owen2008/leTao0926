@@ -6,13 +6,18 @@ margin-top: 150px;
   padding: 0;
   list-style: none;
 } */
+ul,li{
+  padding: 0;
+  margin: 0;
+  list-style: none;;
+}
 a:link,
 a:visited,
 a:hover,
 a:active{
   text-decoration: none;
 }
-body_bg{
+.body_bg{
 background-color: #222D32;
 }
 .dangerColor{
@@ -32,7 +37,7 @@ background-color: #222D32;
   height: 100%;
   background-color: #222D32;
   z-index: 999;
-  transition:all 1s;
+  transition:all .5s linear;
 }
 .left_aside.sideHiden{
   left:-180px;
@@ -61,11 +66,22 @@ background-color: #222D32;
 .left_aside .nav a{
  display: block;
  height: 40px;
+ width: 100%;
 color: #fff;
+line-height: 40px;
+border-left: 3px solid transparent;
+text-align: center;
 }
-.left_aside .updown{
-  padding-left: 17px;
+.left_aside .nav a.active{
+  border-left: 3px solid #337ab7;
+  background-color: #1D1F21;;
+}
+.left_aside .updown {
+  /* padding-left: 17px; */
   display: none;
+}
+.left_aside .updown a{
+  padding-left: 17px;
 }
 
 .right_aside .topbar{
@@ -76,7 +92,7 @@ color: #fff;
   width: 100%;
   background-color: #3C8DBC;
   padding-left: 180px;
-  transition: all 1s;
+  transition: all .5s linear;
   z-index: 666;
 }
 .right_aside .topbar.sideHiden{
@@ -95,7 +111,7 @@ color: #fff;
   padding-top: 70px;
   padding-left: 200px;
   /* padding:20px; */
-  transition: all 1s;
+  transition: all .5s linear;
 
 }
 .container-fluid.sideHiden{
