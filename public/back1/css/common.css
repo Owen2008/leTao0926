@@ -20,6 +20,9 @@ a:active{
 .body_bg{
 background-color: #222D32;
 }
+.mb-20{
+margin-bottom: 20px;
+}
 .dangerColor{
   color:#A94442;
 }

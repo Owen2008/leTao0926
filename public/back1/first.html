@@ -61,7 +61,7 @@
             <li class="active">分类管理</li>
             <li class="active">一级管理</li>
           </ol>
-       <button class="btn btn-default">添加分类</button> 
+       <button class="btn btn-default mb-20 addbtn">添加分类</button> 
        <table class="table table-bordered table-hover">
          <thead >
            <tr>
@@ -111,6 +111,33 @@
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+    
+   
+    <div class="modal fade" tabindex="-1" id="addCate">
+      <div class="modal-dialog" >
+        <div class="modal-content modal-sm">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" ><span >&times;</span></button>
+            <h4 class="modal-title">添加分类</h4>
+          </div>
+          <!-- <form id="addfirst"> -->
+              <div class="modal-body">
+                  <form id="addfirst">
+                <div class=" form-group">
+                  
+              <input type="text" name="categoryName" class="form-control" id="exampleInputEmail1" placeholder="请输入一级分类">
+            </div>
+          </div>
+            <div class="modal-footer ">
+              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+              <button type="submit" class="btn btn-primary ">添加</button>
+            </div>
+          </form>
+         
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
 </body>
 <script src="lib/jquery/jquery.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
