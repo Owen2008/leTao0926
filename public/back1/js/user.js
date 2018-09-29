@@ -33,13 +33,11 @@ $(function(){
       }
     })
   }
-
- render()
-
-})
+  render();
+ 
 // 禁用按钮功能实现
 
- render();
+
 // 禁用按钮功能实现
  var currentId,isDelete;
  $("tbody").on("click",".btn",function(){
@@ -52,7 +50,8 @@ $(function(){
    // 有btn-danger 说明时执行禁用状态,需要发送0,给后台
    isDelete=$(this).hasClass("btn-danger")?0:1;
    console.log(isDelete)
- })
+ })// 点击事件结束
+
  $(".confirm").click(function(){
    // console.log(1)
    $.ajax({
@@ -71,8 +70,9 @@ $(function(){
          render();
        }
      }
-   })
- })
+   })//success结束
+ })//确认按钮结束
+});
 
 
 
