@@ -36,9 +36,9 @@
                   <i class="glyphicon glyphicon-list"></i>
                  <span>分类管理</span>
                </a>
-               <div class="updown show">
+               <div class="updown show" >
                  <a href="first.html" >一级菜单</a>
-                 <a href="second.html" class="active">二级菜单</a>
+                 <a href="second.html" class="active"> 二级菜单</a>
                </div>
              </li>
              <li>
@@ -61,14 +61,51 @@
             <li class="active">分类管理</li>
             <li class="active">二级管理</li>
           </ol>
-        
+       <button class="btn btn-default mb-20 addbtn">添加分类</button> 
+       <table class="table table-bordered table-hover">
+         <thead >
+           <tr>
+             <th width="10%">序号</th>
+             <th width="30%">一级类名</th>
+             <th width="30%">二级分类名称</th>
+             <th width="30%">二级分类LOGO</th>
+            
+           </tr>
+         </thead>
+         <tbody>
+           <tr>
+             <td>1</td>
+             <td>户外馆</td>
+             <td>asade</td>
+             <td><img src="images/none.png" alt=""></td>
+           </tr>
+         </tbody>
+       </table>
+       <div class="text-right">
+        <ul id="paginator"></ul> 
+      </div>
      </div>
    </div>
   </div>
-  <!-- 模态框 -->
- 
+  <!-- 一级分类数据渲染 -->
+ <script type="text/html" id="tmp">
+ {{each rows v i}}
+ <tr>
+  <td>{{i+1+(page-1)*size}}</td>
+  <td>{{v.categoryName}}</td>
+  <td>{{v.brandName}}</td>
+  <td><img src="{{v.brandLogo}}" alt="" height="50"></td>
+</tr>
+ {{/each}}
+ </script>
 
-  
+ <!-- 渲染一级分类列表的模板 -->
+ <script type="text/html" id="tmpSecond">
+{{each rows v i}}
+<li data-id={{v.id}}><a href="#">{{v.categoryName}}</a></li>  
+{{/each}}
+ </script>
+  <!-- 模态框 -->
   <!-- Modal -->
   <div class="modal fade" tabindex="-1" id="myModal">
       <div class="modal-dialog" >
@@ -87,13 +124,72 @@
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+    
+   <!-- 添加分类的模态框 -->
+    <div class="modal fade" tabindex="-1" id="addCate">
+      <div class="modal-dialog" >
+        <div class="modal-content modal-sm">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" ><span >&times;</span></button>
+            <h4 class="modal-title">添加分类</h4>
+          </div>
+          <!-- <form id="addfirst"> -->
+              <div class="modal-body">
+                  <form id="addsecond">
+                <div class=" form-group">
+                  <!-- 下拉框 -->
+                    <div class="dropdown">
+                        <div class=" form-group">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <span class="Txt">  请选择一级分类</span>
+                          <span class="caret"></span>
+                        </button>
+                        <input type="hidden" name="categoryId">
+                        <ul class="dropdown-menu"  id="dropdown">
+                          <li><a href="#">运动馆</a></li>  
+                        </ul>
+                      </div> 
+                    </div> 
+                     <div class=" form-group">
+                      <!-- 文本框 -->
+                        <input type="text" name="brandName" class="form-control" id="exampleInputEmail1" placeholder="请输入二级分类">
+                     </div>
+                 <!--按钮  -->
+                    <div class=" form-group">
+                        <label for="fileupload" class="btn btn-default"> 上传图片</label>
+                        <input style="display:none;"  type="file" name="pic1" id="fileupload" data-url="/category/addSecondCategoryPic" accept="image/*"
+                         multiple>
+                        
+                        <input type="hidden" name="hot" value="1">
+                     </div>    
+                    <div class=" form-group" id="imgBox"> 
+                        <img src="images/none.png" alt="" width="100" height="100">
+                      <input type="hidden" name="brandLogo" >
+                     </div>
+                  </div>                  
+          </div>
+            <div class="modal-footer ">
+              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+              <button type="submit" class="btn btn-primary " id=>添加</button>
+            </div>
+          </form>
+         
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
 </body>
 <script src="lib/jquery/jquery.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
-
+<script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
+<script src="lib/jquery-fileupload/jquery.iframe-transport.js"></script>
+<script src="lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="lib/jquery-fileupload/jquery.fileupload.js"></script>
+
 <script src="js/common.js"></script>
-<script src="js/index.js"></script>
+<script src="js/second.js"></script>
 <script src="js/checkLogin.js"></script>
 </html>
