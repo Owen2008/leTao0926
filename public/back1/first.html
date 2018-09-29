@@ -61,14 +61,38 @@
             <li class="active">分类管理</li>
             <li class="active">一级管理</li>
           </ol>
-        
+       <button class="btn btn-default">添加分类</button> 
+       <table class="table table-bordered table-hover">
+         <thead >
+           <tr>
+             <th width="20%">序号</th>
+             <th width="80%">一级类名</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr>
+             <td>1</td>
+             <td>户外馆</td>
+           </tr>
+         </tbody>
+       </table>
+       <div class="text-right">
+        <ul id="paginator"></ul> 
+      </div>
      </div>
    </div>
   </div>
-  <!-- 模态框 -->
- 
+  <!-- 一级分类数据渲染 -->
+ <script type="text/html" id="tmp">
+ {{each rows v i}}
+ <tr>
+  <td>{{i+1+(page-1)*size}}</td>
+  <td>{{v.categoryName}}</td>
+</tr>
+ {{/each}}
+ </script>
 
-  
+  <!-- 模态框 -->
   <!-- Modal -->
   <div class="modal fade" tabindex="-1" id="myModal">
       <div class="modal-dialog" >
@@ -91,9 +115,10 @@
 <script src="lib/jquery/jquery.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
-
+<script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
 <script src="js/common.js"></script>
-<script src="js/index.js"></script>
+<script src="js/first.js"></script>
 <script src="js/checkLogin.js"></script>
 </html>
