@@ -29,9 +29,6 @@ $(function(){
       }
     })
   }
-})//页面渲染完成
-// 添加模态框准备
-$(function(){
   $(".addbtn").click(function(){
     console.log(1)
     $("#addCate").modal("show")
@@ -49,6 +46,44 @@ $(function(){
       }
     })
   })
+  // 二级分类选项和hidden的input同步
+  $("#dropdown").on("click","li",function(){
+   console.log($(this).text())
+   var txt=$(this).text();
+   $('[name="brandId"]').val(txt);
+   $(".Txt").text( txt );
+   $("#form").data("bootstrapValidator").updateStatus("brandId","VALID")
+  })
+  //图片提交初始化
+  var picArr=[];
+$("#fileupload").fileupload({
+  dataType:"json",
+  done:function(e ,data){
+    // console.log(data.result)
+    
+    picArr.unshift(data.result);
+ 
+    // html会覆盖,要用prevappend
+    // $("#imgBox").html('<img src="'+data.result.picAddr
+    // +'" alt="" width="100" height="100">')
+    $("#imgBox").prepend('<img src="'+picArr[0].picAddr
+    +'" alt="" width="100" height="100">')
+
+  
+  if(picArr.length>3){
+    picArr.pop();
+  $("#imgBox img:last-of-type").remove(); 
+  }
+  if(picArr.length==3){
+    $("#form").data("bootstrapValidator").updateStatus("picStatus","VALID")
+  }
+ 
+  
+  }
+})
+
+
+
   //表单验证
   $("#form").bootstrapValidator({
     excluded: [],
@@ -128,9 +163,48 @@ $(function(){
           }
         }
       },
+      picStatus:{
+        validators:{
+          noEmpty:{
+            message:"请上传3张图片"
+          }
+        }       
+      }
     }
  
+  })//表单验证结束
+  //注册表单验证成功事件,组织默认提交,通过ajax提交
+  $("#form").on("success.form.bv",function( e ){
+    e.preventDefault();
+    var picUrl=$("#form").serialize()
+  // 
+   picUrl+="&picAddr1="+picArr[0].picAddr+"&picName1="+picArr[0].picName+""
+   picUrl+="&picAddr2="+picArr[1].picAddr+"&picName2="+picArr[1].picName+""
+   picUrl+="&picAddr3="+picArr[2].picAddr+"&picName3="+picArr[2].picName+""
+  console.log(picUrl)
+    $.ajax({
+      type:"post",
+      url:"/product/addProduct",
+      data:picUrl,
+      dataType:"json",
+      success:function(info){
+      //  console.log(info)
+      currentPage=1;
+      render();
+     $("#addCate").modal("hide");
+     $("#form").data("bootstrapValidator").resetForm(true);
+     $(".Txt").text("请选择二级分类");
+     $('#imgBox img').remove();
+       picArr=[];
+      },
+      error:function(){
+        console.log(0)
+      }
+    })
   })
+})//页面渲染完成
+// 添加模态框准备
+
+
   
 
-})
