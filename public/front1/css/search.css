@@ -1,4 +1,4 @@
-
+/* 公共搜索框样式 */
 .lt_main .search {
   padding: 10px;
   position: relative;
@@ -17,6 +17,7 @@
   right: 10px;
   border-radius: 0 5px 5px 0;
 }
+/* 搜索列表页样式 */
 .lt_main .sortNav li{
  width: 25%;
  float: left;
@@ -30,3 +31,31 @@
   text-align: center;
   line-height: 30px;
 }
+/* 搜索中心的样式 */
+.lt_main .title{
+  font-size: 12px;
+  padding: 0 10px;
+  color:#666;
+}
+.lt_main .history{
+  padding: 10px;
+
+}
+.lt_main .history ul{
+  border:1px dashed red;
+}
+.lt_main .history li{
+  border-bottom: 1px dashed red;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+}
+.lt_main .history li:last-child{
+  border: none;
+}
+.lt_main .history li a{
+  display: block;
+  font-size: 12px;
+ 
+}
+
