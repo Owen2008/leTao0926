@@ -4,7 +4,7 @@ $(function(){
   // var str=JSON.stringify(arr)
   // localStorage.setItem("search_list",str)
 //  存
-
+render();
 function Store(){
   
   var key= $(".search input").val();
@@ -20,6 +20,8 @@ function Store(){
     }
   arr.unshift(key);
   localStorage.setItem("search_list",JSON.stringify(arr));
+  }else{
+    mui.toast("请输入搜索关键字")
   }
   
 }
@@ -42,15 +44,27 @@ function render(){
 
 // 添加
 $(".search-btn").click(function(){
+
+  var key= $(".search input").val();
+  console.log(key)
+  if(key!=""){
+    location.href="http://localhost:3000/front1/searchlist.html?key="+key;
+  }
+  
   Store();
   render();
-  location.href="../searchlist.html";
 })
 //清空记录
 $("#history").on("click",".clear-btn",function(){
-  alert(1)
-  localStorage.removeItem("search_list");
-  render();
+ //弹出层
+ mui.confirm("您确认要清空历史纪录吗","温馨提示",["取消","确认"],function(e){
+  if(e.index==1){
+    localStorage.removeItem("search_list");
+    render();
+  }
+ })
+  
+ 
 })
 //个别删除
 $("#history").on("click",".icon_delete",function(){
