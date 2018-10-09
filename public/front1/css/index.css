@@ -8,22 +8,5 @@
 width: 33.3%;
 float: left;
 }
-.lt_main .product{
-  padding: 0 10px;
-}
-.lt_main .product li{
-  width: 48%;
- float: left;
-  margin-top: 10px;
-  padding: 10px;
-  text-align: center;
-  border:1px solid #ccc;
-  
-}
-.lt_main .product li:nth-child(2n+1){
-  float: left;
-}
-.lt_main .product li:nth-child(2n){
-  float: right;
-}
+
 
