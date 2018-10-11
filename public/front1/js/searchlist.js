@@ -16,6 +16,7 @@ $(function(){
   })
   $(".search-btn").click(function(){
     // 搜索按钮点击事件
+   render();
   })
 
 
@@ -25,6 +26,7 @@ function render () {
 // 排序参数
   var parameter = {};
   var $current = $("li.current");
+  var key=$(".search-input").val();
   parameter.proName = key;
   parameter.page = 1;
   parameter.pageSize = 100;
