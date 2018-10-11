@@ -1,0 +1,40 @@
+.lt_main li{
+  /* border-bottom: 1px solid #ccc; */
+  /* padding: 10px; */
+}
+.lt_main li .contain{
+  /* padding: 10px; */
+}
+.lt_main li p{
+  margin: 0;
+}
+ .lt_main li img{
+   width: 60px;
+   height: 60px;
+ }
+ .lt_main li .cart-img{
+   float: left;
+ }
+ .lt_main li .cart-text{
+   padding: 0 10px;
+   overflow: hidden;
+ }
+ .lt_main .price{
+  color: red;
+}
+.lt_main .oldPrice{
+  text-decoration: line-through;
+}
+.lt_main .scroll-box {
+display:flex;
+}
+.lt_main .scroll-box a{
+  font-size: 30px;
+  padding:10px 15px;
+
+  
+  height:110px;
+  line-height: 80px;
+  vertical-align: top;
+  width: 600%;
+}
