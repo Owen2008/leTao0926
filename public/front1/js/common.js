@@ -4,3 +4,14 @@
     indicators:false //是否显示滚动条
   });
   
+    function getkey ( k ) {
+      var obj = {};
+      var arr = decodeURI ( window.location["search"]).slice( 1 ).split("&");
+      arr.forEach (function ( v , i ) {
+       var key = v.split("=")[ 0 ];
+       var value = v.split("=")[ 1 ];
+      obj[ key ] = value;     
+   })//forEach 结束
+    return obj [ k ]; 
+  }//函数结束
+ 

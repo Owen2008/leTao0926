@@ -17,15 +17,15 @@
     <a href="Javascript:history.back()" class="icon-left">
         <i class="mui-icon mui-icon-back"></i>
     </a>
-    <h3>搜索中心</h3>
+    <h3>搜索列表</h3>
   </div>
   <div class="lt_main">
       <div class="mui-scroll-wrapper">
           <div class="mui-scroll">
             <!--这里放置真实显示的DOM内容-->
             <div class="search">
-                <input type="text" placeholder="请输入搜索关键字">
-                <button class="mui-btn mui-btn-primary">搜索</button>
+                <input type="text" placeholder="请输入搜索关键字" class="search-input">
+                <button class="mui-btn mui-btn-primary search-btn">搜索</button>
           </div>
            <div class="sortNav">
              <ul>
@@ -35,16 +35,16 @@
                    <i class="fa fa-angle-down"></i>
                  </a>
                 </li>
-                <li>
+                <li class="" data-type="price">
                     <a href="#">
                       价格
-                      <i class="fa fa-angle-down"></i>
+                      <i class="fa fa-angle-down "></i>
                     </a>
                 </li>
-                <li>
+                <li  data-type="num">
                     <a href="#">
                       库存
-                      <i class="fa fa-angle-down"></i>
+                      <i class="fa fa-angle-down "></i>
                     </a>
                 </li>
                 <li>
@@ -56,88 +56,7 @@
              </ul>
            </div>
            <div class="product">
-              <ul class="mui-clearfix">
-                <li>
-                 <img src="images/product.jpg" alt="">
-                 <p class="mui-ellipsis-2">adidas阿迪达斯 男式 场下休闲篮球鞋S83700场下休闲篮球鞋S83700 </p>
-                
-                <p>
-                    <span class="price">&yen;560</span>
-                    <span class="oldPrice">&yen;680</span>
-                </p> 
-                 <button class="mui-btn mui-btn-danger">立即购买</button>
-                </li>
-                <li>
-                    <img src="images/product.jpg" alt="">
-                    <p class="mui-ellipsis-2">adidas阿迪达斯 男式 场下休闲篮球鞋S83700场下休闲篮球鞋S83700 </p>
-                   
-                   <p>
-                       <span class="price">&yen;560</span>
-                       <span class="oldPrice">&yen;680</span>
-                   </p> 
-                    <button class="mui-btn mui-btn-danger">立即购买</button>
-                 </li>
-                 <li>
-                    <img src="images/product.jpg" alt="">
-                    <p class="mui-ellipsis-2">adidas阿迪达斯 男式 场下休闲篮球鞋S83700场下休闲篮球鞋S83700 </p>
-                   
-                   <p>
-                       <span class="price">&yen;560</span>
-                       <span class="oldPrice">&yen;680</span>
-                   </p> 
-                    <button class="mui-btn mui-btn-danger">立即购买</button>
-                  </li>
-                  <li>
-                      <img src="images/product.jpg" alt="">
-                      <p class="mui-ellipsis-2">adidas阿迪达斯 男式 场下休闲篮球鞋S83700场下休闲篮球鞋S83700 </p>
-                     
-                     <p>
-                         <span class="price">&yen;560</span>
-                         <span class="oldPrice">&yen;680</span>
-                     </p> 
-                      <button class="mui-btn mui-btn-danger">立即购买</button>
-                   </li>
-                   <li>
-                      <img src="images/product.jpg" alt="">
-                      <p class="mui-ellipsis-2">adidas阿迪达斯 男式 场下休闲篮球鞋S83700场下休闲篮球鞋S83700 </p>
-                     
-                     <p>
-                         <span class="price">&yen;560</span>
-                         <span class="oldPrice">&yen;680</span>
-                     </p> 
-                      <button class="mui-btn mui-btn-danger">立即购买</button>
-                     </li>
-                     <li>
-                         <img src="images/product.jpg" alt="">
-                         <p class="mui-ellipsis-2">adidas阿迪达斯 男式 场下休闲篮球鞋S83700场下休闲篮球鞋S83700 </p>
-                        
-                        <p>
-                            <span class="price">&yen;560</span>
-                            <span class="oldPrice">&yen;680</span>
-                        </p> 
-                         <button class="mui-btn mui-btn-danger">立即购买</button>
-                      </li>
-                      <li>
-                         <img src="images/product.jpg" alt="">
-                         <p class="mui-ellipsis-2">adidas阿迪达斯 男式 场下休闲篮球鞋S83700场下休闲篮球鞋S83700 </p>
-                        
-                        <p>
-                            <span class="price">&yen;560</span>
-                            <span class="oldPrice">&yen;680</span>
-                        </p> 
-                         <button class="mui-btn mui-btn-danger">立即购买</button>
-                       </li>
-                      <li>
-                           <img src="images/product.jpg" alt="">
-                           <p class="mui-ellipsis-2">adidas阿迪达斯 男式 场下休闲篮球鞋S83700场下休闲篮球鞋S83700 </p>
-                          
-                          <p>
-                              <span class="price">&yen;560</span>
-                              <span class="oldPrice">&yen;680</span>
-                          </p> 
-                           <button class="mui-btn mui-btn-danger">立即购买</button>
-                      </li> 
-              </ul>
+             <!-- 挖坑 -->
             </div>
           </div>
         </div>
@@ -177,3 +96,21 @@
   <script src="lib/artTemplate/template-web.js"></script>
   <script src="js/common.js "></script>
   <script src="js/searchlist.js"></script>
+
+
+  <script type = "text/html" id = "product-tpl" >
+    <ul class="mui-clearfix">
+        {{ each data v i }}
+        <li>
+         <img src="{{ v.pic[0].picAddr}}" alt="">
+         <p class="mui-ellipsis-2">{{ v.proDesc }} </p>
+        
+        <p> 
+            <span class="price">&yen;{{ v.price }}</span>
+            <span class="oldPrice">&yen;{{ v.oldPrice }}</span>
+        </p> 
+         <button class="mui-btn mui-btn-danger">立即购买</button>
+        </li>
+        {{ /each }}
+    </ul>
+  </script>

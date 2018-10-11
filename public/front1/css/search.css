@@ -24,6 +24,9 @@
  background-color: #eee;
  height: 30px;;
 }
+.lt_main .sortNav li.current a{
+  color:orange;
+}
 .lt_main .sortNav li a{
   display: block;
   font-size: 12px;
@@ -58,4 +61,5 @@
   font-size: 12px;
  
 }
+
 
